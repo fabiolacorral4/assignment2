@@ -16,9 +16,10 @@ size_t Str_getLength(const char s[])
 char* Str_copy(char dest[], const char src[])
 {
     size_t len = Str_getLength(src);
+    size_t i;
     assert(src != NULL);
     assert(dest != NULL);
-    for (size_t i = 0; i < len; i++)
+    for (i = 0; i < len; i++)
         dest[i] = src[i];
     dest[len] = '\0';
     return dest;
@@ -28,9 +29,10 @@ char* Str_concat(char dest[], const char src[])
 {
     size_t len_src = Str_getLength(src);
     size_t len_dest = Str_getLength(dest);
+    size_t i;
     assert(src != NULL);
     assert(dest != NULL);
-    for (size_t i = 0; i < len_src; i++)
+    for (i = 0; i < len_src; i++)
         dest[len_dest+i] = src[i];
     dest[len_dest+len_src] = '\0';
     return dest;
@@ -67,10 +69,11 @@ const char* Str_search(const char s[], const char subs[])
 {
     size_t len_s = Str_getLength(s);   
     size_t len_subs = Str_getLength(subs);
+    size_t i;
     assert(s != NULL);
     assert(subs != NULL);
     if (len_subs == 0) return s; 
-    for (size_t i = 0; i < len_s; i++)
+    for (i = 0; i < len_s; i++)
     {
         int count = 0;
         while (s[i+count]==subs[count])
