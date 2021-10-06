@@ -75,7 +75,7 @@ const char* Str_search(const char s[], const char subs[])
     if (len_subs == 0) return s; 
     for (i = 0; i < len_s; i++)
     {
-        int count = 0;
+        size_t count = 0;
         while (s[i+count]==subs[count])
         {
             if (count == len_subs-1) return &s[i];
