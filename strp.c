@@ -1,9 +1,9 @@
+/* Implementation of Str Module using Pointer Notation */
 #include "str.h"
 #include <stdlib.h>
 #include <assert.h>
 #include <stdio.h>
 
-/* Implementation of Str Module using Pointer Notation */
 
 size_t Str_getLength(const char *s)
 {

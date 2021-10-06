@@ -1,8 +1,9 @@
+/* Implementation of Str Module using Array Notation */
 #include "str.h"
 #include <stdlib.h>
 #include <assert.h>
 
-/* Implementation of Str Module using Array Notation */
+
 
 size_t Str_getLength(const char s[])
 {
