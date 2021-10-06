@@ -87,7 +87,7 @@ const char* Str_search(const char *s, const char *subs)
     if (*subs == '\0') return s; 
     while (*i != '\0')
     {
-        int count = 0;
+        size_t count = 0;
         while (*(i + count) == *(subs+count))
         {
             if (count == len_subs-1) return i;
