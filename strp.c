@@ -7,8 +7,8 @@
 
 size_t Str_getLength(const char *s)
 {
-   assert(s != NULL);
    const char *end = s;
+   assert(s != NULL);
    while (*end != '\0')
       end++;
    return (size_t)(end - s);
@@ -16,10 +16,10 @@ size_t Str_getLength(const char *s)
 
 char* Str_copy(char *dest, const char *src)
 {
-    assert(src != NULL);
-    assert(dest != NULL);
     char *i = (char*) src;
     char *result = dest;
+    assert(src != NULL);
+    assert(dest != NULL);
     while (*i != '\0')
     {
         *dest = *i;
@@ -32,11 +32,11 @@ char* Str_copy(char *dest, const char *src)
 
 char* Str_concat(char *dest, const char *src)
 {
-    assert(src != NULL);
-    assert(dest != NULL);
     char *i = (char*) src;
     char *result = dest;
     size_t len_dest = Str_getLength(dest);
+    assert(src != NULL);
+    assert(dest != NULL);
     while(*i != '\0')
     {
         *(dest + len_dest) = *i;
@@ -49,12 +49,12 @@ char* Str_concat(char *dest, const char *src)
 
 int Str_compare(const char *str1, const char *str2)
 {
-    assert(str1 != NULL);
-    assert(str2 != NULL);
     int result = 0;
     char *i = (char*)str1;
     size_t len_str1 = Str_getLength(str1);
     size_t len_str2 = Str_getLength(str2);
+    assert(str1 != NULL);
+    assert(str2 != NULL);
     while (*i != '\0')
     {
         if (*i == *str2)
@@ -80,10 +80,10 @@ int Str_compare(const char *str1, const char *str2)
 
 const char* Str_search(const char *s, const char *subs)
 {
-    assert(s != NULL);
-    assert(subs != NULL);
     const char *i = (char*)s; 
     size_t len_subs = Str_getLength(subs);
+    assert(s != NULL);
+    assert(subs != NULL);
     if (*subs == '\0') return s; 
     while (*i != '\0')
     {

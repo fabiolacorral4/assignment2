@@ -6,8 +6,8 @@
 
 size_t Str_getLength(const char s[])
 {
-    assert(s != NULL);
     size_t len = 0;
+    assert(s != NULL);
     while (s[len] != '\0')
         len++;
     return len;
@@ -15,9 +15,9 @@ size_t Str_getLength(const char s[])
 
 char* Str_copy(char dest[], const char src[])
 {
+    size_t len = Str_getLength(src);
     assert(src != NULL);
     assert(dest != NULL);
-    size_t len = Str_getLength(src);
     for (size_t i = 0; i < len; i++)
         dest[i] = src[i];
     dest[len] = '\0';
@@ -26,10 +26,10 @@ char* Str_copy(char dest[], const char src[])
 
 char* Str_concat(char dest[], const char src[])
 {
-    assert(src != NULL);
-    assert(dest != NULL);
     size_t len_src = Str_getLength(src);
     size_t len_dest = Str_getLength(dest);
+    assert(src != NULL);
+    assert(dest != NULL);
     for (size_t i = 0; i < len_src; i++)
         dest[len_dest+i] = src[i];
     dest[len_dest+len_src] = '\0';
@@ -38,10 +38,10 @@ char* Str_concat(char dest[], const char src[])
 
 int Str_compare(const char str1[], const char str2[])
 {
-    assert(str1 != NULL);
-    assert(str2 != NULL);
     size_t i = 0;
     int result = 0;
+    assert(str1 != NULL);
+    assert(str2 != NULL);
     while (str1[i] != '\0')
     {
         if (str1[i]==str2[i]){
@@ -65,10 +65,10 @@ int Str_compare(const char str1[], const char str2[])
 
 const char* Str_search(const char s[], const char subs[])
 {
-    assert(s != NULL);
-    assert(subs != NULL);
     size_t len_s = Str_getLength(s);   
     size_t len_subs = Str_getLength(subs);
+    assert(s != NULL);
+    assert(subs != NULL);
     if (len_subs == 0) return s; 
     for (size_t i = 0; i < len_s; i++)
     {
