@@ -1,7 +1,7 @@
 Assignment 2 readme File
 
 ------------------------------------------------------------------------
-What is your name?
+What is your name? Fabiola Corral
 
 
 
@@ -11,6 +11,8 @@ assignment? COPY THE LIST of authorized sources of information given
 in the "Policies" web page (also available on armlab in the file
 ~cos217/AuthorizedSourcesList ) to this section of the readme file,
 and edit it as appropriate.
+
+Sources: course instructors, lab TAs in the lab, course texts and handouts
 
 
 
@@ -26,25 +28,31 @@ interaction, may additionally require the interaction being reported
 to the Committee on Discipline. Write "None" if you used no
 unauthorized sources of information.
 
+None
+
 
 
 ------------------------------------------------------------------------
 What is your assessment of the assignment? Was it helpful? Was it fun?
 
-
+It was helpful but way too time-consuming
 
 ------------------------------------------------------------------------
 (optional) What information can you provide about your submission that
 will help your grader to grade it in the most favorable light? In
 particular, what bugs are in your submission?
 
-
+samplereplace always gave me errors (even lab tas couldnt help me figure
+this out), so although the output looks correct when testing with 
+individual files, the output of replace.c never passes the testreplace tests
 
 ------------------------------------------------------------------------
 What warnings does splint generate on stra.c, and what are your
 disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
+
+None
 
 
 
@@ -54,6 +62,8 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
+None
+
 
 
 ------------------------------------------------------------------------
@@ -61,6 +71,8 @@ What warnings does splint generate on strp.c, and what are your
 disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
+
+None
 
 
 
@@ -70,6 +82,8 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
+None
+
 
 
 ------------------------------------------------------------------------
@@ -78,7 +92,7 @@ disagreements with them? Copy the splint warnings here, and express your
 disagreement after each warning. If there are no warnings, then write
 "None."
 
-
+None
 
 ------------------------------------------------------------------------
 What warnings does critTer generate on replace.c, and what are your
@@ -86,13 +100,22 @@ disagreements with them? Copy the critTer warnings here, and express
 your disagreement after each warning. If there are no warnings, then
 write "None."
 
+replace.c: line 40: low priority: 
+This area is deeply nested at level 4, consider refactoring
 
+replace.c: line 45: low priority: 
+This area is deeply nested at level 4, consider refactoring
+
+
+My dissagrement would be that the logic necessary for this program
+required these deep nestings
 
 ------------------------------------------------------------------------
 Is it possible for Str_copy or Str_concat to call assert to verify
 that the destination memory area specified by the caller is large
 enough? Explain.
 
-
+No, unless you call assert within a loop, using assert could only
+check whether the beginning of the destination string is null or not
 
 ------------------------------------------------------------------------
