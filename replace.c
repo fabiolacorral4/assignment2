@@ -93,18 +93,11 @@ int main(int argc, char *argv[])
 
    pcFrom = argv[1];
    pcTo = argv[2];
-   size_t count;
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
    {
-      if (*pcFrom == '\0') 
-      {
-         printf("%s", acLine);  
-      }
-      else 
-      {
-         count = count + replaceAndWrite(acLine, pcFrom, pcTo);     
-      }     
+      if (*pcFrom == '\0') printf("%s", acLine);  
+      else uReplaceCount = uReplaceCount + replaceAndWrite(acLine, pcFrom, pcTo);     
    }
-   fprintf(stderr, "%lu replacements made", count);
+   fprintf(stderr, "%lu replacements made\n", uReplaceCount);
    return 0;
 }
