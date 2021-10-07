@@ -1,6 +1,6 @@
 /*--------------------------------------------------------------------*/
 /* replace.c                                                          */
-/* Author: ???                                                        */
+/* Author: Fabiola Corral                                             */
 /*--------------------------------------------------------------------*/
 
 #include "str.h"
@@ -20,8 +20,47 @@
 static size_t replaceAndWrite(const char *pcLine,
                               const char *pcFrom, const char *pcTo)
 {
-   /* Insert your code here. */
+   assert(pcLine != NULL);
+   assert(pcFrom != NULL);
+   assert(pcTo != NULL);
+   if (*pcFrom == '\0')
+   {
+      printf("%s", pcLine);
+      return 0;
+   }
+   else
+   {
+      size_t count = 0;
+      size_t len_from = Str_getLength(pcFrom);
+      while (*pcLine != '\0')
+      {
+         char* curr_search = (char*)Str_search(pcLine, pcFrom);
+         if (curr_search == NULL)
+         {
+            while (*pcLine != '\0')
+            {
+               putchar(*pcLine);
+               pcLine++;
+            }
+            return count;
+         }
+         else
+         {
+            while ((char*)pcLine != curr_search)
+            {
+               putchar(*pcLine);
+               pcLine++;
+            }
+            printf("%s", pcTo);
+            pcLine = pcLine+len_from;
+            count++;
+         }
+      }
+      return count;
+   }
 }
+
+
 
 /*--------------------------------------------------------------------*/
 
@@ -54,10 +93,18 @@ int main(int argc, char *argv[])
 
    pcFrom = argv[1];
    pcTo = argv[2];
-
+   size_t count;
    while (fgets(acLine, MAX_LINE_SIZE, stdin) != NULL)
-      /* Insert your code here. */
-
-   fprintf(stderr, "%lu replacements\n", (unsigned long)uReplaceCount);
+   {
+      if (*pcFrom == '\0') 
+      {
+         printf("%s", acLine);  
+      }
+      else 
+      {
+         count = count + replaceAndWrite(acLine, pcFrom, pcTo);     
+      }     
+   }
+   fprintf(stderr, "%lu replacements made", count);
    return 0;
 }
